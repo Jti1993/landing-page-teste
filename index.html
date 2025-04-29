@@ -3,528 +3,626 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agência IA de Conteúdo - Completo [Inspirado Caixa Preta]</title>
+    <title>Caixa Preta - [Seu Nome ou Empresa]</title>
+    <!-- Link para a fonte do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Início do CSS Embutido -->
     <style>
-        /* Reset Básico e Variáveis de Cor (Estilo Caixa Preta) */
-        :root {
-            --bg-dark: #101010;
-            --bg-dark-alt: #1a1a1a;
-            --accent-yellow: #FFD700;
-            --text-white: #FFFFFF;
-            --text-gray: #CCCCCC;
-            --cta-text-dark: #101010;
-            --red-emphasis: #E53935;
-            --border-radius: 8px;
-            --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        /* Estilos Gerais */
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.7;
-            color: var(--text-gray);
-            background-color: var(--bg-dark);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif; /* Fonte similar à original */
+            background-color: #1a1a1a; /* Cor de fundo escura */
+            color: #f0f0f0; /* Cor do texto principal (claro) */
+            line-height: 1.6;
         }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        h1, h2, h3 { margin-bottom: 1.2rem; color: var(--accent-yellow); font-weight: 800; }
-        h1 { font-size: 3.2rem; line-height: 1.1; font-weight: 900; color: var(--accent-yellow); text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        h2 { font-size: 2.8rem; text-align: center; }
-        h3 { font-size: 1.8rem; color: var(--accent-yellow); }
-        p { margin-bottom: 1.5rem; color: var(--text-gray); font-size: 1.1rem; }
-        section { padding: 80px 0; border-bottom: 1px solid #2a2a2a; }
-        section:last-of-type { border-bottom: none; }
-        img { max-width: 100%; height: auto; display: block; border-radius: var(--border-radius);}
 
+        .container {
+            max-width: 1140px; /* Largura máxima do conteúdo */
+            margin: 0 auto; /* Centraliza o container */
+            padding: 0 20px; /* Espaçamento lateral */
+        }
+
+        .section {
+            padding: 60px 0; /* Espaçamento vertical entre seções */
+            text-align: center; /* Centraliza texto nas seções por padrão */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 700; /* Títulos em negrito */
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #ff4500; /* Cor dos links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            color: #ff4500; /* Cor de destaque (vermelho/laranja) */
+        }
+
+        /* Botão Call-to-Action (CTA) */
         .cta-button {
             display: inline-block;
-            background-color: var(--accent-yellow);
-            color: var(--cta-text-dark);
-            padding: 18px 40px;
-            font-size: 1.3rem;
-            font-weight: 800;
+            background-color: #ff4500; /* Cor de fundo do botão */
+            color: #ffffff !important; /* Cor do texto do botão (importante para sobrescrever 'a') */
+            padding: 15px 35px;
+            font-size: 1.1em;
+            font-weight: bold;
             text-transform: uppercase;
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            text-decoration: none !important; /* Remover sublinhado */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #e03e00; /* Cor mais escura no hover */
+            transform: scale(1.05); /* Efeito de crescimento */
+            text-decoration: none !important;
+        }
+
+        /* Seção Hero */
+        .hero-section {
+            background-color: #111; /* Fundo ligeiramente diferente para destaque */
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2em;
+            color: #aaa;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-size: 2.8em; /* Tamanho grande */
+            font-weight: 900; /* Bem pesado */
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-description, .hero-subdescription {
+            font-size: 1.1em;
+            max-width: 800px; /* Limita largura do texto */
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        .hero-description b {
+            color: #fff;
+        }
+
+        .hero-button {
+            font-size: 1.3em;
+            padding: 20px 45px;
+        }
+
+        .hero-obs {
+            font-size: 0.9em;
+            color: #aaa;
+            margin-top: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Seção de Benefícios */
+        .benefits-section .section-title {
+            margin-bottom: 40px;
+            font-size: 2.2em;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Layout em grade responsivo */
+            gap: 30px; /* Espaço entre os itens */
+            text-align: left;
+        }
+
+        .benefit-item {
+            background-color: #2a2a2a; /* Fundo dos cards de benefício */
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #ff4500; /* Borda de destaque */
+        }
+
+        .benefit-item h3 {
+            color: #ff4500;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .benefit-item p {
+            color: #ccc;
+            font-size: 0.95em;
+            margin-bottom: 0;
+        }
+
+        /* Seção Lista de Documentos */
+        .documents-section {
+            background-color: #222; /* Fundo ligeiramente diferente */
+            text-align: left;
+        }
+
+        .documents-section .section-title {
             text-align: center;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            margin-bottom: 15px;
+            font-size: 2.2em;
         }
-        .cta-button:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4); }
-        .cta-button i { margin-right: 10px; }
-
-        /* Hero Section */
-        #hero { text-align: center; padding: 100px 0 60px 0; background-color: var(--bg-dark-alt); }
-        #hero h1 { margin-bottom: 1rem; }
-        #hero p.subtitle { font-size: 1.4rem; max-width: 800px; margin: 1rem auto 2.5rem auto; color: var(--text-white); font-weight: 400; }
-        .hero-image { display: none; }
-
-         /* Video Section */
-        #sales-video { background-color: var(--bg-dark); text-align: center; padding-top: 0; }
-        #sales-video h2 { font-size: 2.2rem; margin-bottom: 1rem; }
-        .video-container {
-            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-            max-width: 900px; margin: 1.5rem auto 0 auto;
-            border-radius: var(--border-radius);
-            border: 3px solid var(--accent-yellow);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-        }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        #sales-video .cta-button { margin-top: 2.5rem; } /* Adiciona margem ao botão pós vídeo */
-
-
-        /* Problem Section */
-        #problem { background-color: var(--bg-dark-alt); text-align: center;}
-        #problem h2 { color: var(--red-emphasis); }
-        #problem ul { list-style: none; padding: 0; max-width: 700px; margin: 2rem auto; text-align: left;}
-        #problem li { margin-bottom: 1.2rem; padding-left: 40px; position: relative; font-size: 1.15rem; color: var(--text-white); }
-        #problem li i { color: var(--red-emphasis); position: absolute; left: 0; top: 5px; font-size: 1.5rem; }
-
-        /* Solution Section */
-        #solution {text-align: center; background-color: var(--bg-dark);}
-        .solution-image { width: 90%; max-width: 650px; margin: 2.5rem auto; box-shadow: var(--box-shadow); }
-
-        /* Agents Section */
-        #agents { background-color: var(--bg-dark-alt); }
-        #agents h2 { margin-bottom: 4rem; }
-        .agents-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;}
-        .agent-card {
-            background-color: var(--bg-dark); padding: 30px; border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-align: center;
-            border: 1px solid #2a2a2a; transition: transform 0.3s ease;
-        }
-         .agent-card:hover { transform: translateY(-5px); }
-        .agent-icon { font-size: 2.8rem; color: var(--accent-yellow); margin-bottom: 1.5rem; display: inline-block; }
-        .agent-card h3 { font-size: 1.5rem; margin-bottom: 0.8rem; font-weight: 700; }
-
-        /* How It Works Section */
-        #how-it-works { background-color: var(--bg-dark); text-align: center; }
-        #how-it-works h2 { margin-bottom: 4rem; }
-        .steps-container { display: flex; justify-content: space-around; align-items: flex-start; flex-wrap: wrap; margin-top: 3rem; gap: 40px; }
-        .step {flex-basis: 30%; min-width: 280px; text-align: center;}
-        .step-icon { font-size: 3rem; color: var(--accent-yellow); margin-bottom: 1.5rem; display: inline-block; }
-        .step h3 {font-size: 1.4rem; margin-bottom: 0.8rem; font-weight: 700; color: var(--text-white);}
-
-        /* Testimonials Section */
-        #testimonials { background-color: var(--bg-dark-alt); text-align: center; }
-        #testimonials h2 { margin-bottom: 4rem; }
-        .testimonial-card {
-            background-color: var(--bg-dark); padding: 30px; border-radius: var(--border-radius); margin: 2rem auto 3rem auto;
-            max-width: 750px; border: 1px solid #2a2a2a;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative;
-        }
-         .testimonial-card p:first-of-type { font-size: 1.2rem; font-style: italic; margin-bottom: 1.5rem; color: var(--text-white); padding-top: 20px; }
-        .testimonial-author {font-weight: 700; color: var(--accent-yellow); text-align: center; font-style: normal; margin-top: 1rem;}
-        .testimonial-photo{
-            width: 100px; height: 100px; border-radius: 50%; margin: -70px auto 1rem auto;
-            border: 5px solid var(--accent-yellow);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; z-index: 1;
+        .documents-section > .container > p { /* Parágrafo introdutório */
+            text-align: center;
+            font-size: 1.1em;
+            color: #ccc;
+            margin-bottom: 40px;
         }
 
-        /* Offer Section */
-        #offer { background-color: var(--bg-dark); text-align: center; }
-        #offer h2 { font-size: 3rem; font-weight: 900; margin-bottom: 2rem;}
+
+        .document-category {
+            margin-bottom: 30px;
+        }
+
+        .document-category h3 {
+            color: #ff4500;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+
+        .document-category ol {
+            padding-left: 20px; /* Recuo da lista */
+            margin-bottom: 0;
+        }
+        .document-category ol li {
+            margin-bottom: 8px;
+            color: #ddd;
+        }
+        .document-category ol .sublist {
+            padding-left: 25px;
+            margin-top: 8px;
+        }
+        .document-category ol .sublist li {
+            font-size: 0.95em;
+            color: #bbb;
+        }
+
+
+        /* Seção de Preço */
+        .pricing-section {
+             background-color: #111;
+        }
+
         .price-box {
-            background-color: var(--bg-dark-alt); padding: 30px; border-radius: var(--border-radius);
-            max-width: 600px; margin: 2rem auto; border: 2px solid var(--accent-yellow);
-             box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+            background-color: #2a2a2a;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px; /* Limita largura da caixa de preço */
+            border: 2px solid #ff4500;
+            margin-left: auto; /* Centraliza a caixa */
+            margin-right: auto; /* Centraliza a caixa */
         }
-        .price-box p { margin-bottom: 0.8rem; color: var(--text-white); font-size: 1.2rem; }
-        .slashed-price { font-size: 1.5rem; color: var(--red-emphasis); text-decoration: line-through; margin-right: 15px; }
-        .final-price { font-size: 4rem; font-weight: 900; color: var(--accent-yellow); display: block; margin: 0.5rem 0 1rem 0; text-shadow: 0 3px 6px rgba(0,0,0,0.5); }
-        .guarantee-box { margin-top: 2.5rem; }
-        .guarantee-seal { font-size: 5rem; color: var(--accent-yellow); margin-bottom: 0.5rem; }
-        .guarantee-text { font-weight: 700; border-radius: var(--border-radius); font-size: 1.2rem; color: var(--text-white); display: block; }
-        #offer .cta-button {margin-top: 2.5rem;}
 
-        /* --- FAQ Section - CORRECTED --- */
-        #faq { background-color: var(--bg-dark-alt); }
-        #faq h2 { margin-bottom: 3rem; } /* Ajuste margem */
-        .faq-container { max-width: 850px; margin: 0 auto; }
-        .faq-item details {
-            background-color: var(--bg-dark);
-            border-radius: var(--border-radius);
-            margin-bottom: 1rem; /* Espaço entre itens */
-            border: 1px solid #333; /* Borda sutil */
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); /* Sombra mais discreta */
-            overflow: hidden; /* Garante que o conteúdo não vaze */
+        .pricing-intro {
+            font-size: 1.4em;
+            color: #ccc;
         }
-        .faq-item summary {
-            font-size: 1.2rem; /* Tamanho da pergunta */
-            font-weight: 700;
-            color: var(--accent-yellow); /* Cor da pergunta */
-            padding: 18px 50px 18px 25px; /* Padding (espaço para seta) */
-            cursor: pointer;
-            list-style: none; /* Remove marcador padrão */
-            position: relative;
-            transition: background-color 0.2s ease;
+
+        .original-price {
+            font-size: 1.5em;
+            color: #aaa;
+            text-decoration: line-through;
+            margin: 5px 0;
         }
-        .faq-item summary:hover { background-color: #252525; }
-        /* Correção da Seta (::after) */
-        .faq-item summary::after {
-            content: '\f078'; /* Código Font Awesome para chevron-down */
-            font-family: 'Font Awesome 6 Free'; /* ESSENCIAL: Define a fonte */
-            font-weight: 900; /* Usa a versão bold do ícone */
-            position: absolute;
-            right: 25px; /* Posição da seta à direita */
-            top: 50%; /* Centraliza verticalmente */
-            transform: translateY(-50%) rotate(0deg); /* Estado inicial (seta para baixo) */
-            transition: transform 0.3s ease; /* Animação suave da rotação */
-            color: var(--accent-yellow); /* Cor da seta */
+
+        .discount-badge {
+            display: inline-block;
+            background-color: #ff4500;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 1em;
+            margin: 10px 0;
         }
-        /* Rotação da Seta quando Aberto */
-        .faq-item details[open] summary::after {
-            transform: translateY(-50%) rotate(180deg); /* Gira 180 graus (seta para cima) */
-        }
-        /* Estilo da Resposta */
-        .faq-answer {
-            padding: 20px 25px; /* Padding interno da resposta */
-            font-size: 1.05rem; /* Tamanho do texto da resposta */
-            color: var(--text-gray); /* Cor do texto da resposta */
-            background-color: var(--bg-dark); /* Fundo igual ao summary fechado */
-            border-top: 1px solid #333; /* Linha separadora */
-        }
-        /* Remove marcador padrão no Chrome/Safari */
-        .faq-item summary::-webkit-details-marker { display: none; }
-        /* --- Fim FAQ Section Correção --- */
+        .discount-badge span { color: #fff !important;} /* Garantir cor */
 
 
-        /* Final CTA Section */
-        #final-cta { background-color: var(--bg-dark); text-align: center; padding-bottom: 100px; }
-        #final-cta h2 { color: var(--accent-yellow); font-size: 2.8rem; margin-bottom: 1.5rem;}
-        #final-cta p { font-size: 1.2rem; color: var(--text-white); max-width: 700px; margin: 0 auto 2.5rem auto;}
+        .discount-percent {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #ff4500;
+            margin: 10px 0;
+        }
+        .discount-percent span { color: #ff4500 !important;} /* Garantir cor */
 
-        /* Footer */
-        footer { text-align: center; padding: 40px 0; background-color: #000; font-size: 1rem; color: #888; }
-        footer a { color: #aaa; text-decoration: none; transition: color 0.3s ease;}
-        footer a:hover { color: var(--accent-yellow); }
+        .final-price {
+            font-size: 3em; /* Preço bem grande */
+            font-weight: 900;
+            margin: 10px 0;
+            color: #f0f0f0;
+        }
 
-        /* =========================== */
-        /* === Media Queries START === */
-        /* =========================== */
+        .final-price span {
+            color: #ff4500; /* Destaca o valor numérico */
+        }
 
-        /* Tablet Breakpoint & Smaller Mobiles */
+        .price-alternative {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-top: -5px; /* Ajuste fino */
+        }
+
+        .price-value {
+            font-size: 1em;
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        .pricing-button {
+            margin-top: 30px;
+        }
+
+        .pricing-outro {
+            margin-top: 30px;
+            font-size: 1em;
+            color: #ccc;
+        }
+
+        /* Seção Features (Garantias) */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            font-size: 1.3em;
+            color: #eee; /* Cor um pouco mais clara que o texto normal */
+        }
+
+        .feature-item p {
+            color: #bbb;
+        }
+
+        /* Seção Sobre o Autor */
+        .author-section {
+            background-color: #222;
+        }
+
+        .author-content {
+            display: flex;
+            flex-wrap: wrap; /* Para telas menores */
+            align-items: center; /* Alinha verticalmente */
+            gap: 40px; /* Espaço entre imagem e texto */
+            text-align: left;
+        }
+
+        .author-image {
+            flex: 0 0 300px; /* Largura fixa para a imagem */
+        }
+
+        .author-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Bordas arredondadas */
+            border: 3px solid #ff4500;
+        }
+
+        .author-text {
+            flex: 1; /* Ocupa o espaço restante */
+        }
+
+        .author-text h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ff4500;
+        }
+        .author-text p {
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        /* Seção do Formulário */
+        .form-section {
+            background-color: #111;
+        }
+        .form-section .section-title {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        #lead-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Espaço entre os campos */
+        }
+
+        #lead-form input[type="text"],
+        #lead-form input[type="email"],
+        #lead-form input[type="tel"] {
+            padding: 15px;
+            border: 1px solid #555;
+            background-color: #333;
+            color: #f0f0f0;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        #lead-form input::placeholder {
+            color: #aaa;
+        }
+
+        .form-button {
+            margin-top: 10px; /* Espaço acima do botão */
+        }
+
+
+        /* Rodapé */
+        .footer {
+            background-color: #111;
+            color: #aaa;
+            padding: 20px 0;
+            margin-top: 40px; /* Espaço acima do rodapé */
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        /* --- Responsividade Básica --- */
         @media (max-width: 768px) {
-            h1 { font-size: 2.6rem; }
-            h2 { font-size: 2.2rem; }
-            h3 { font-size: 1.6rem; }
-            p { font-size: 1.05rem; }
-            section { padding: 60px 0; }
-            .container { padding: 0 15px; }
-
-            #hero p.subtitle { font-size: 1.2rem; }
-
-            .video-container { max-width: 95%; border-width: 2px; }
-
-            #problem ul { max-width: 90%; }
-            #problem li { font-size: 1.1rem; }
-
-            .agents-grid { grid-template-columns: 1fr; gap: 25px; }
-            .agent-card { padding: 25px; }
-
-            .steps-container { flex-direction: column; align-items: center; gap: 30px; }
-            .step { flex-basis: 100%; min-width: unset; margin-bottom: 0; }
-
-            .testimonial-photo { width: 80px; height: 80px; margin-top: -60px; }
-            .testimonial-card { max-width: 90%; padding: 25px; }
-            .testimonial-card p:first-of-type { font-size: 1.1rem; padding-top: 15px; }
-
-            #offer h2 { font-size: 2.4rem; }
-            .price-box { max-width: 90%; padding: 25px; }
-            .slashed-price { font-size: 1.3rem; }
-            .final-price { font-size: 3.2rem; }
-            .guarantee-seal { font-size: 4rem; }
-            .guarantee-text { font-size: 1.1rem; }
-            .cta-button { padding: 16px 35px; font-size: 1.2rem; }
-
-            /* FAQ Responsivo */
-            #faq h2 { margin-bottom: 2.5rem; }
-            .faq-container { max-width: 100%; }
-            .faq-item summary { font-size: 1.1rem; padding: 15px 45px 15px 20px; /* Ajuste padding para seta */ }
-            .faq-item summary::after { right: 20px; /* Ajuste posição seta */ }
-            .faq-answer { padding: 18px 20px; font-size: 1rem; }
-
-            #final-cta h2 { font-size: 2.2rem; }
-            #final-cta p { font-size: 1.1rem; }
-        }
-
-        /* Smaller Mobile Breakpoint */
-        @media (max-width: 480px) {
-            h1 { font-size: 2.1rem; }
-            h2 { font-size: 1.9rem; }
-            h3 { font-size: 1.4rem; }
-            p { font-size: 1rem; }
-            section { padding: 50px 0; }
-
-            #hero { padding: 80px 0 40px 0; }
-            #hero p.subtitle { font-size: 1.1rem; }
-
-            #sales-video h2 { font-size: 1.8rem; }
-            /* Botões CTA com largura total em telas pequenas */
-            #sales-video .cta-button,
-            #offer .cta-button,
-            #final-cta .cta-button {
-                width: 100%;
-                padding: 15px 20px;
-                font-size: 1.1rem;
+            .hero-title {
+                font-size: 2em; /* Reduz tamanho em telas menores */
             }
-
-            #problem li { font-size: 1rem; padding-left: 35px;}
-            #problem li i { font-size: 1.3rem;}
-
-            .agent-card { padding: 20px; }
-            .agent-icon { font-size: 2.5rem; }
-
-            .step-icon { font-size: 2.5rem; }
-            .step h3 { font-size: 1.2rem; }
-
-            .testimonial-photo { width: 70px; height: 70px; margin-top: -50px; border-width: 4px;}
-            .testimonial-card { padding: 20px; }
-            .testimonial-card p:first-of-type { font-size: 1rem; }
-
-            #offer h2 { font-size: 2rem; }
-            .price-box { padding: 20px; }
-            .final-price { font-size: 2.8rem; }
-            .slashed-price { font-size: 1.1rem; }
-            .guarantee-text { font-size: 1rem; }
-
-            .faq-item summary { font-size: 1rem; }
-            .faq-answer { padding: 15px; font-size: 0.95rem; }
-
-            #final-cta h2 { font-size: 1.9rem; }
-            #final-cta p { font-size: 1rem; }
-
-            footer { padding: 30px 0; font-size: 0.9rem; }
+            .final-price {
+                font-size: 2.2em;
+            }
+            .benefits-grid, .features-grid {
+                grid-template-columns: 1fr; /* Empilha itens em telas menores */
+            }
+            .author-content {
+                flex-direction: column; /* Empilha imagem e texto */
+                text-align: center;
+            }
+            .author-image {
+                flex-basis: auto; /* Remove largura fixa */
+                max-width: 250px; /* Limita tamanho da imagem */
+                margin-bottom: 20px;
+            }
+             .author-text {
+                text-align: center;
+            }
+            .documents-section {
+               text-align: center;
+            }
+             .document-category ol {
+               padding-left: 5px;
+             }
+            .price-box {
+                padding: 25px; /* Menor padding em telas pequenas */
+            }
+            #lead-form {
+                 max-width: 90%; /* Usa mais largura da tela */
+            }
         }
-
-        /* =========================== */
-        /* === Media Queries END === */
-        /* =========================== */
-
     </style>
+    <!-- Fim do CSS Embutido -->
+
 </head>
 <body>
 
-    <!-- 1. Hero Section -->
-    <section id="hero">
+    <!-- Seção Hero (Topo) -->
+    <section class="section hero-section">
         <div class="container">
-            <h1>Sua Agência de Conteúdo Completa, Potencializada por IA</h1>
-            <p class="subtitle">Cansado de gargalos na produção? Obtenha um time de especialistas IA 24/7 para pesquisar, escrever, otimizar e distribuir seu conteúdo – tudo no seu chat preferido.</p>
-             <!-- Vídeo foi movido para logo abaixo -->
+            <h2 class="hero-subtitle">PLAYBOOK COMPLETO</h2>
+            <h1 class="hero-title">Caixa Preta de <span class="highlight">Processos e Documentos</span> da Movement Lançamentos</h1>
+            <p class="hero-description"><b>+ de 40 Documentos e Processos</b> operacionais para transformar a gestão, a organização e a performance da sua Agência de Lançamentos - ou <b>Empresa de Infoprodutos</b></p>
+            <p class="hero-subdescription">Ganhe tempo, tenha mais organização, e aumente seu lucro <span class="highlight">com nosso Playbook Completo</span></p>
+            <p class="hero-subdescription">Com o nosso Playbook, delegar tarefas e estruturar sua Agência de Lançamentos fica simples e rápido, permitindo que você personalize documentos essenciais para sua empresa em menos de 15 minutos.</p>
+            <a href="#preco" class="cta-button hero-button">QUERO COMPRAR AGORA</a>
+            <p class="hero-obs">Obs: Os processos e documentos são úteis e aplicáveis para qualquer empresa que trabalha com Infoprodutos, mesmo que <span style="letter-spacing: -0.1px">não</span> seja uma Agência de Lançamentos.</p>
         </div>
     </section>
 
-     <!-- 2. Sales Video Section (Logo após Hero) -->
-    <section id="sales-video">
+    <!-- Seção de Benefícios -->
+    <section class="section benefits-section">
         <div class="container">
-             <h2><i class="fas fa-play-circle"></i> Assista: Sua Agência IA em Ação!</h2>
-             <p>Veja em poucos minutos como você pode transformar sua criação de conteúdo.</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/VaCD790dRIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-             <!-- Botão de CTA adicionado aqui para ficar logo após o vídeo -->
-             <a href="https://app.adapta.one/" target="_blank" class="cta-button"><i class="fas fa-rocket"></i> Quero Minha Agência IA Agora!</a>
-        </div>
-    </section>
-
-    <!-- 3. Problem Section -->
-    <section id="problem">
-        <div class="container">
-            <h2><i class="fas fa-exclamation-triangle"></i> O Ciclo Vicioso da Criação de Conteúdo...</h2>
-            <ul>
-                <li><i class="fas fa-hourglass-half"></i> Gasta horas preciosas pesquisando, escrevendo e revisando?</li>
-                <li><i class="fas fa-dollar-sign"></i> Contratar múltiplos especialistas (redatores, SEO, designers) pesa no orçamento?</li>
-                <li><i class="fas fa-calendar-times"></i> Manter a frequência e a qualidade das postagens é uma luta constante?</li>
-                <li><i class="fas fa-lightbulb-slash"></i> Sofre com o bloqueio criativo e a falta de ideias novas?</li>
-                <li><i class="fas fa-chart-line-down"></i> Tem dificuldade em escalar sua produção sem explodir os custos?</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- 4. Solution Section -->
-    <section id="solution">
-        <div class="container">
-            <h2><i class="fas fa-key"></i> A Chave: Combo Agência IA - Seu Time Sob Demanda</h2>
-            <p>Reunimos um conjunto poderoso de agentes IA, cada um treinado para uma função específica. Eles trabalham em sinergia para entregar resultados incríveis, diretamente na sua plataforma de IA favorita. É como ter uma agência inteira à sua disposição, instantaneamente.</p>
-            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80"
-                 alt="Fluxo de trabalho com IA e tecnologia" class="solution-image">
-        </div>
-    </section>
-
-    <!-- 5. Agents Section ("O que você recebe") -->
-    <section id="agents">
-        <div class="container">
-            <h2><i class="fas fa-box-open"></i> Dentro da Sua Nova Agência IA:</h2>
-            <div class="agents-grid">
-                <div class="agent-card">
-                    <i class="fas fa-lightbulb agent-icon"></i>
-                    <h3>Agente Estrategista</h3>
-                    <p>Define pautas, pesquisa tendências e sugere tópicos relevantes para engajar seu público.</p>
+            <h2 class="section-title">Ganhe performance, organização e segurança em um só lugar:</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>Organize seus processos</h3>
+                    <p>Com fluxogramas, cronogramas e rotinas detalhadas, sua equipe saberá exatamente o que fazer e quando fazer.</p>
                 </div>
-                <div class="agent-card">
-                    <i class="fas fa-search agent-icon"></i>
-                    <h3>Agente Pesquisador</h3>
-                    <p>Coleta dados e encontra fontes confiáveis. Economize horas e tenha informações precisas.</p>
+                <div class="benefit-item">
+                    <h3>Proteja seu negócio</h3>
+                    <p>Contratos prontos para cada etapa, de especialistas a parcerias estratégicas, evitando problemas legais.</p>
                 </div>
-                <div class="agent-card">
-                     <i class="fas fa-pen-fancy agent-icon"></i>
-                    <h3>Agente Redator</h3>
-                    <p>Escreve rascunhos de artigos, posts, e-mails e roteiros em diversos estilos e tons.</p>
+                <div class="benefit-item">
+                    <h3>Domine as finanças</h3>
+                    <p>Controle seus lançamentos e fluxos de caixa com modelos que garantem previsibilidade e crescimento.</p>
                 </div>
-                <div class="agent-card">
-                    <i class="fas fa-chart-line agent-icon"></i>
-                    <h3>Agente Otimizador SEO</h3>
-                    <p>Analisa palavras-chave e otimiza seu conteúdo para os motores de busca. Aumente sua visibilidade.</p>
-                </div>
-                <div class="agent-card">
-                     <i class="fas fa-share-alt agent-icon"></i>
-                    <h3>Agente Social Media</h3>
-                    <p>Cria legendas cativantes e adapta conteúdo para diferentes redes sociais. Mantenha-se ativo.</p>
-                </div>
-                <div class="agent-card">
-                     <i class="fas fa-check-double agent-icon"></i>
-                    <h3>Agente Revisor</h3>
-                    <p>Verifica gramática, estilo, clareza e coesão. Garanta profissionalismo total.</p>
+                <div class="benefit-item">
+                    <h3>Gestão profissional</h3>
+                    <p>Tenha ferramentas para recrutar, liderar e alinhar sua equipe ao propósito do seu negócio.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. How It Works Section -->
-    <section id="how-it-works">
+    <!-- Seção Lista de Documentos -->
+    <section class="section documents-section">
         <div class="container">
-            <h2><i class="fas fa-cogs"></i> Como Funciona? Simples Assim:</h2>
-            <div class="steps-container">
-                <div class="step">
-                    <i class="fas fa-download step-icon"></i>
-                    <h3>1. Importe</h3>
-                    <p>Faça o upload/copie os prompts dos agentes para sua plataforma de IA.</p>
-                </div>
-                <div class="step">
-                     <i class="fas fa-tasks step-icon"></i>
-                    <h3>2. Comande</h3>
-                    <p>Diga aos agentes o que você precisa (post, e-mail, script, etc.).</p>
-                </div>
-                <div class="step">
-                    <i class="fas fa-magic step-icon"></i>
-                    <h3>3. Receba</h3>
-                    <p>Interaja, refine e veja seu conteúdo de alta qualidade ganhar vida!</p>
-                </div>
+            <h2 class="section-title">Os <span class="highlight">Processos e Documentos</span> que já geraram múltiplos <span class="highlight">8 dígitos</span> para nossos projetos</h2>
+            <p>Aqui está a lista de todos os documentos que você terá acesso:</p>
+
+            <div class="document-category">
+                <h3>1. Adm-Financeiro e Jurídico</h3>
+                <ol>
+                    <li>Contrato com Expert – Co-produção</li>
+                    <li>Contrato com Expert – Sociedade</li>
+                    <li>Contrato com Equipe – PJ</li>
+                    <li>Contrato de Parceria</li>
+                    <li>Fechamento Financeiro do Lançamento</li>
+                    <li>Relatório de DRE Financeiro</li>
+                    <li>Relatório de Fluxo de Caixa Mensal</li>
+                    <li>Termo de Rescisão de Contrato com Equipe</li>
+                    <li>Termo de Rescisão de Contrato com Expert</li>
+                </ol>
+            </div>
+
+             <div class="document-category">
+                <h3>2. Equipe e Pessoas (RH)</h3>
+                <ol>
+                    <li>Apresentação Acelera Move (Evento de Cultura)</li>
+                    <li>Apresentação Café com CEO (Onboarding Equipe)</li>
+                    <li>Apresentação MoveNews (Jornal Corporativo)</li>
+                    <li>Ficha Cadastral de Colaborador</li>
+                    <li>Fluxograma do Processo de Contratação</li>
+                    <li>Formulário de Contratação/Aplicação de Vaga/Processo Seletivo</li>
+                    <li>Job Description (Descrição dos Cargos)
+                      <ol class="sublist">
+                        <li>Gestor de Projetos</li>
+                        <li>Copywriter</li>
+                        <li>Gestor de Tráfego</li>
+                        <li>Gestor de Conteúdo</li>
+                        <li>Social Media</li>
+                        <li>Designer</li>
+                        <li>Editor de Vídeos</li>
+                        <li>Analista Adm-Financeiro</li>
+                        <li>Analista de CS</li>
+                        <li>Analista de RH</li>
+                      </ol>
+                    </li>
+                    <li>Pesquisa de Clima Organizacional</li>
+                    <li>Planilha de Avaliação e Feedback 1×1</li>
+                </ol>
+            </div>
+
+             <div class="document-category">
+                <h3>3. Gestão e Processos</h3>
+                <ol>
+                    <li>Cronograma de Lançamento no Clickup</li>
+                    <li>Cronograma de Reuniões</li>
+                    <li>Ficha Cadastral de Expert</li>
+                    <li>Formulário para Aplicação de Experts</li>
+                    <li>Organograma Empresarial</li>
+                    <li>Política de Privacidade do Site</li>
+                    <li>Quadro de Missão, Visão e Valores</li>
+                    <li>Registro INPI e Registro.br</li>
+                    <li>Rotinas de Liderança</li>
+                    <li>Termos de Uso de Infoproduto para Aluno</li>
+                </ol>
+            </div>
+
+            <div class="document-category">
+                <h3>4. Marketing e Lançamentos</h3>
+                <ol>
+                    <li>Briefing de Lançamento (Onboarding de Expert)</li>
+                    <li>Cronograma Macro de Campanhas e Lançamentos</li>
+                    <li>Debriefing de Lançamento</li>
+                    <li>Painel de Controle de Lançamento e Perpétuo</li>
+                    <li>Painel de Controle de Produção de Conteúdo</li>
+                    <li>Pesquisa com Alunos (Ficha de Matrícula)</li>
+                    <li>Pesquisa de Captura</li>
+                    <li>Pesquisa de NPS</li>
+                    <li>Política e Remuneração da Equipe Comercial</li>
+                    <li>Pontos de Contato de Campanhas e Lançamentos</li>
+                    <li>Projeção Financeira de Lançamento</li>
+                </ol>
             </div>
         </div>
     </section>
 
-    <!-- 7. Testimonials Section -->
-    <section id="testimonials">
-        <div class="container">
-            <h2><i class="fas fa-star"></i> Quem Usa, Aprova:</h2>
-             <img src="https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_960_720.png" alt="Foto de João Silva" class="testimonial-photo">
-            <div class="testimonial-card">
-                 <p>"Desde que comecei a usar a Agência IA, minha produção de blog posts triplicou e a qualidade é impressionante! Simplificou meu fluxo de trabalho de uma forma que eu não imaginava."</p>
-                 <p class="testimonial-author">- João Silva, Marketing Digital</p>
+    <!-- Seção de Preço -->
+    <section id="preco" class="section pricing-section">
+        <div class="container price-box">
+            <h2 class="pricing-intro">Você terá tudo isso por apenas:</h2>
+            <p class="original-price"><s>R$ 4.997,00</s></p>
+            <p class="discount-badge"><b><span>Desconto de Lançamento</span></b></p>
+            <p class="discount-percent"><span><b>93% OFF</b></span></p>
+            <p class="final-price">12x R$ <span>36,50</span></p>
+            <p class="price-alternative">ou R$ 365 à vista</p>
+            <p class="price-value">Menos de R$1,00 por dia</p>
+            <!-- MUDE O HREF ABAIXO PARA SEU LINK DE CHECKOUT -->
+            <a href="#seu-link-de-checkout" class="cta-button pricing-button">QUERO MEU ACESSO AGORA</a>
+            <p class="pricing-outro">Não deixe seu negócio crescer à base de improvisos. Transforme sua gestão e alcance resultados extraordinários.</p>
+        </div>
+    </section>
+
+    <!-- Seção de Garantias/Acesso -->
+    <section class="section features-section">
+        <div class="container features-grid">
+            <div class="feature-item">
+                <h3>Área de Membros Exclusiva</h3>
+                <p>Todos os documentos disponíveis para download imediato.</p>
             </div>
-             <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="Foto de Maria Costa" class="testimonial-photo">
-            <div class="testimonial-card">
-                 <p>"Finalmente consigo manter minhas redes sociais atualizadas e com conteúdo relevante sem gastar horas nisso. Os agentes são incrivelmente eficientes e criativos."</p>
-                 <p class="testimonial-author">- Maria Costa, Empreendedora</p>
+            <div class="feature-item">
+                <h3>Acesso Vitalício</h3>
+                <p>Salve e utilize sempre que necessário.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Garantia de Satisfação</h3>
+                <p>7 dias para testar sem riscos.</p>
             </div>
         </div>
     </section>
 
-    <!-- 8. Offer Section -->
-    <section id="offer">
-        <div class="container">
-            <h2>Sua Chance ÚNICA de Ter Sua Própria Agência IA</h2>
-            <div class="price-box">
-                <p>Leve AGORA o Combo Completo com Acesso <strong>VITALÍCIO</strong>:</p>
-                <p style="margin-bottom: 0.5rem;">(De <span class="slashed-price">R$ 497</span> por apenas)</p>
-                 <span class="final-price">R$ 197</span>
-                 <p style="font-size: 1rem; color: var(--text-gray);">(ou 12x de R$ 19,78)</p>
-                 <p style="font-weight: 700; color: var(--text-white); margin-top: 1.5rem;">+ Atualizações Futuras Inclusas!</p>
+    <!-- Seção Sobre o Autor -->
+    <section class="section author-section">
+        <div class="container author-content">
+            <div class="author-image">
+                <!-- Coloque a URL da imagem ou o caminho local -->
+                <img src="https://lp.aceleradornegociosdigitais.com.br/wp-content/uploads/2025/02/asdasasf3-copiar-2.webp" alt="Léo Soares">
             </div>
-             <a href="https://app.adapta.one/" target="_blank" class="cta-button"><i class="fas fa-shopping-cart"></i> Sim, Quero Minha Agência IA AGORA!</a>
-            <div class="guarantee-box">
-                 <i class="fas fa-shield-alt guarantee-seal"></i>
-                <p class="guarantee-text">Sua Satisfação ou Seu Dinheiro de Volta!<br><strong>Garantia Incondicional de 30 Dias</strong></p>
+            <div class="author-text">
+                <h2>Quem é Léo Soares?</h2>
+                <p>CEO da Movement Lançamentos e Sócio do Marcus Marques no Grupo Acelerador.<br><br>
+                De Entregador de Jornais a Lançador com mais de 10 anos de experiência e fazendo lançamentos de múltiplos 7 dígitos.<br><br>
+                Já lançou grandes players, como Tiago Reis (Suno Research), Marcelo Germano (Empresa Autogerenciável), Norton Reveno (Milhas Lucrativas) e André Franco (cryptoandrefranco).<br><br>
+                Empresário e Fundador da Movement, agência de lançamentos de infoprodutos que já faturou mais de R$ 50 milhões com seu estilo de lançamento autoral.</p>
             </div>
         </div>
     </section>
 
-    <!-- 9. FAQ Section -->
-    <section id="faq">
-        <div class="container">
-            <h2><i class="fas fa-question-circle"></i> Dúvidas Frequentes:</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <details>
-                        <summary>Como funciona a instalação/importação dos agentes?</summary>
-                        <div class="faq-answer">
-                            <p>É super simples! Fornecemos um guia passo-a-passo claro. Basicamente, você vai copiar os textos (prompts) especiais que definem cada agente e colar na interface da sua plataforma de IA compatível (como ChatGPT). Não requer instalação de software.</p>
-                        </div>
-                    </details>
-                </div>
-                <div class="faq-item">
-                    <details>
-                        <summary>Preciso ter conhecimento técnico avançado?</summary>
-                        <div class="faq-answer">
-                             <p>De forma alguma! Se você já utiliza o ChatGPT ou uma ferramenta similar, saberá usar nossos agentes. A interação acontece na mesma interface que você já conhece. O objetivo é simplificar, não complicar.</p>
-                        </div>
-                    </details>
-                </div>
-                 <div class="faq-item">
-                    <details>
-                        <summary>Em qual plataforma de IA esses agentes funcionam?</summary>
-                        <div class="faq-answer">
-                            <p>Atualmente, nossos agentes são otimizados para o <strong>ChatGPT 4</strong> (versão Plus ou superior). Estamos constantemente avaliando a compatibilidade e trabalhando para expandir para outras plataformas líderes no futuro.</p>
-                        </div>
-                    </details>
-                </div>
-                 <div class="faq-item">
-                    <details>
-                        <summary>Os agentes aprendem ou se adaptam ao meu estilo?</summary>
-                        <div class="faq-answer">
-                             <p>Os agentes em si não têm memória persistente, mas você pode (e deve!) instruí-los sobre seu tom de voz, público-alvo e estilo preferido a cada novo projeto. Eles são projetados para seguir suas diretrizes e se adaptar ao contexto.</p>
-                        </div>
-                    </details>
-                </div>
-                 <div class="faq-item">
-                    <details>
-                        <summary>Qual o limite de uso?</summary>
-                        <div class="faq-answer">
-                            <p>Com nosso acesso vitalício, você pode usar os prompts dos agentes quantas vezes quiser! O único limite será o da sua própria assinatura ou conta na plataforma de IA que você utiliza.</p>
-                        </div>
-                    </details>
-                </div>
-                 <div class="faq-item">
-                    <details>
-                        <summary>Como funciona o suporte e as atualizações?</summary>
-                        <div class="faq-answer">
-                            <p>Ao adquirir o combo, você terá acesso a um canal de suporte para dúvidas. Além disso, como o campo de IA evolui, incluímos atualizações futuras nos prompts dos agentes (sem custo adicional no acesso vitalício) para garantir sua eficácia.</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </div>
+    <!-- Seção do Formulário (Exemplo simples) -->
+    <section class="section form-section">
+       <div class="container">
+           <h2 class="section-title">Garanta seu acesso agora!</h2>
+            <!-- Adapte a action e os inputs conforme sua ferramenta de email marketing -->
+           <form method="POST" action="#" id="lead-form"> <!-- MUDE O ACTION AQUI -->
+               <input type="text" name="nome" placeholder="Seu Nome" required>
+               <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+               <input type="tel" name="whatsapp" placeholder="Seu Whatsapp com DDD" required>
+               <button type="submit" class="cta-button form-button">QUERO ENTRAR AGORA</button>
+           </form>
+       </div>
     </section>
 
-    <!-- 10. Final CTA Section -->
-    <section id="final-cta">
-        <div class="container">
-            <h2>Pronto Para Revolucionar Sua Criação de Conteúdo?</h2>
-            <p>Chega de perder tempo e dinheiro. Adquira sua Agência IA agora e comece a produzir conteúdo de alta qualidade de forma inteligente e escalável.</p>
-            <a href="https://app.adapta.one/" target="_blank" class="cta-button"><i class="fas fa-bolt"></i> Pegar Meu Acesso Vitalício Imediato!</a>
-        </div>
-    </section>
-
+    <!-- Rodapé -->
     <!-- Footer -->
     <footer>
         <div class="container">
